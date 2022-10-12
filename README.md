@@ -20,7 +20,7 @@ Copy this link and open command prompt and switch to the location you want to sa
 
 5. Before pushing the code run following command to avoid merge conflicts
 ``` bash
-git remote add upstream https://github.com/Atharv-777/VIRTUAL-ASSISTANT.git
+git remote add upstream https://github.com/RIKI-05/VIRTUAL-ASSISTANT.git
 git fetch upstream
 git pull upstream master
 ```
