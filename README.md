@@ -32,4 +32,4 @@ git pull upstream master
 <p align="left"><img alt="forking" src="img/pr.jpeg"></p>
 <p align="left"><img alt="forking" src="img/new_pr.jpeg"></p>
 
-And bam! thats it.
+And bam!:fire: thats it.
