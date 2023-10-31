@@ -1,0 +1,78 @@
+import os
+import sys
+import random
+import json
+import datetime
+import subprocess
+import requests
+import shutil
+import ctypes
+import smtplib
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+from twilio.rest import Client
+import webbrowser
+import winshell
+from ecapture import ecapture as ec
+from twilio.rest import Client
+import wolframalpha
+import pyttsx3
+import tkinter
+import speech_recognition as sr
+import wikipedia
+import pyjokes
+from clint.textui import progress
+import win32com.client as wincl
+from urllib.request import urlopen
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
+
+# Function to speak text
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
+
+# Greet the user
+def wishMe():
+    hour = int(datetime.datetime.now().hour)
+    if 0 <= hour < 12:
+        speak("Good morning!")
+    elif 12 <= hour < 18:
+        speak("Good afternoon")
+    else:
+        speak("Good evening")
+
+# Introduction
+def intro():
+    speak("I am Ciraai, how may I help you, dear....")
+
+# Function to listen to user's command
+def takeCommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        speak('Listening...')
+        r.pause_threshold = 1
+        audio = r.listen(source)
+
+    try:
+        print('Recognizing...')
+        query = r.recognize_google(audio).lower()
+        print("User said:", query)
+    except Exception as e:
+        print(e)
+        speak("I'm sorry, I didn't get you...")
+        return "none"
+    return query
+
+if __name__ == "__main__":
+    clear = lambda: os.system('cls')
+    clear()
+    intro()
+    wishMe()
+    
+    if True:
+        query = takeCommand()
+        query = query.lower()
+        # Your code for handling user queries goes here...
